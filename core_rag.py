@@ -28,7 +28,7 @@ class RAGBot:
             return RAGBot._rag_chain
         
         logger.info("Indexing new documents...")
-        logger.info(f"API: {self.api_key[:30]}, data path: {self.data_path}, FAISS: {self.index_path}")
+        logger.info(f"API: {self.api_key[:30]}, data path: {self.data_path}")
         
         loader = DirectoryLoader(
             self.data_path,
