@@ -17,7 +17,7 @@ class RAGBot:
     _rag_chain = None
     
     def __init__(self):
-        self.api_key = os.getenv("OPENAI_KEY")
+        self.api_key = os.getenv("OPENAI_API_KEY")
         self.data_path = "./data/"
         self.embeddings = OpenAIEmbeddings(api_key=self.api_key)
 
