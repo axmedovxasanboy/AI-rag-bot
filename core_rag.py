@@ -1,5 +1,5 @@
 import logging
-
+import os
 from langchain_openai import OpenAIEmbeddings, ChatOpenAI
 from langchain_community.vectorstores import FAISS
 from langchain_community.document_loaders import DirectoryLoader, UnstructuredFileLoader
@@ -17,8 +17,8 @@ class RAGBot:
     _rag_chain = None
     
     def __init__(self):
-        self.api_key = "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"
-        self.data_path = "/home/xasanboy-axmedov/Linux Ubuntu/Python/AI RAG/data/"
+        self.api_key = os.getenv("OPENAI_KEY")
+        self.data_path = "./data/"
         self.embeddings = OpenAIEmbeddings(api_key=self.api_key)
 
     def get_chain(self):
